@@ -1,5 +1,4 @@
 import { useAuth0 } from "@auth0/auth0-react";
-
 function App() {
   const { getAccessTokenSilently } = useAuth0();
 
@@ -7,7 +6,7 @@ function App() {
     const token = await getAccessTokenSilently();
     console.log(token);
 
-    const res = await fetch("http://localhost:8080/protected", {
+    const res = await fetch("https://auth0-e93t.onrender.com/protected", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
